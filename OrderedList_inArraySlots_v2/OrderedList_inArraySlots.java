@@ -5,28 +5,30 @@
   increasing value, implemented using a
   List_inArraySlots
  */
+ import java.util.ArrayList;
 
 public class OrderedList_inArraySlots
     implements OrderedList {
 
-    private ?? Java-standard ArrayList here ?? list_iAS;
+    private ArrayList<Integer> example;
+
 
     public OrderedList_inArraySlots() {
-        list_iAS = new List_inArraySlots();
+        example = new ArrayList<Integer>(10);
     }
 
     /**
       @return the number of elements in this list
      */
     public int size(){
-        return list_iAS.size();
+        return example.size();
     }
 
     /**
       @return a string representation of this Orderedlist_iAS
      */
     public String toString() {
-        return list_iAS.toString();
+        return example.toString();
     }
 
 
@@ -36,11 +38,11 @@ public class OrderedList_inArraySlots
      */
      public boolean add( int value) {
          int dest = 0;
-         for( ; dest < list_iAS.size() && list_iAS.get( dest) < value
+         for( ; dest < example.size() && example.get( dest) < value
             ; dest++) ;
-         // System.out.println( "OL adding " + value
-         //                   + " at index " + dest);
-         list_iAS.add( dest, value);
+         System.out.println( "OL adding " + value
+                           + " at index " + dest);
+         example.add( dest, value);
          return true;
      }
 
@@ -53,7 +55,7 @@ public class OrderedList_inArraySlots
            whether the condition was violated.)
      */
     public int get( int index ) {
-        return list_iAS.get( index);
+        return example.get( index);
     }
 
 
@@ -66,6 +68,6 @@ public class OrderedList_inArraySlots
       @return the value that was removed from the list
      */
     public int remove( int index) {
-        return list_iAS.remove( index);
+        return example.remove( index);
     }
 }

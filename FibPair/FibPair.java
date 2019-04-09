@@ -5,11 +5,13 @@
 public class FibPair {
     public static void main(String[] commandLine) {
         System.out.println();
-        
+
+        Pair<Integer> test = new Pair<Integer>(2, 1);
+
         // calculate next pair, Fibonacci-style
         nextText( 8, 5, "[13,8]");
         nextText( 3, 2, "[5,3]");
-        
+
         /* optional extra education: Fibonacci numbers
            recursively, and in linear time */
         // oneFib(  0, 0);  // base case
@@ -19,13 +21,13 @@ public class FibPair {
 
         // System.out.println( "no noticeable delay before...");
         // oneFib( 46, 1836311903);
-          /* value from 
+          /* value from
              stackoverflow.com/questions/15065088/upper-limits-for-fibonnacci
              but adjusted because they index from 1. Who ARE these people?
            */
     }
-    
-    
+
+
     /**
       test nextPairAfter
      */
@@ -35,13 +37,26 @@ public class FibPair {
                                 ) {
 
         // code here to make a pair from the params
+        String output = "[" + (bigger + smaller) + "," + bigger + "]";
+        String thisPair = "[" + bigger + "," + smaller + "]";
 
         System.out.println(
             "The pair after "
-          // + ?? the pair you made
+          + thisPair
           // + " is " + nextPairAfter( ?? the pair you made)
+          + " is " + output
           + " ...expecting " + expect
           + System.lineSeparator());
+     }
+
+     private static void nextPairAfter(Pair<Integer> pair, String expect) {
+       String output = "[" + (pair.getFirst() + pair.getSecond()) + "," + pair.getSecond() + "]";
+       String thisPair = "[" + pair.getSecond() + "," + pair.getFirst() + "]";
+
+       System.out.println( "The pair after " + thisPair
+                          + " is " + output
+                          + "...expecting " + expect
+                          + System.lineSeparator());
      }
 
 
@@ -53,9 +68,9 @@ public class FibPair {
         the big number is the sum of the given pair
         the small number is the the old big number
      */
-    private static ?? nextPairAfter( ??) {
+    /*private static ?? nextPairAfter( ??) {
         return ?? the next pair;
-    }
+    }*/
 
 
     /**
@@ -77,7 +92,7 @@ public class FibPair {
       Calculate a Fibonacci number recursively
       and in linear time.
       optional extra education
-      
+
       @return the nth Fibonacci number
               n >= 0
      */
